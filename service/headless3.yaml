@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dns-svc3
+  labels:
+    app: dep-app3
+spec:
+  clusterIP: None
+  selector:
+    app: dep-app3
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dep-cass3
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dep-app3
+    spec:
+      containers:
+        - name: app3
+          image: reg.spp.com/spp/cass-dev:v1.2.19

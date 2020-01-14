@@ -1,0 +1,11 @@
+apiVersion: mysql.oracle.com/v1alpha1
+kind: Cluster
+metadata:
+  name: my-first-db
+  namespace: mysql-cluster
+spec: 
+  members: 3
+  version: 8.0.12
+  repository: reg.spp.com/spp/mysql-server 
+#  config:
+#    name: mysql-operator-config

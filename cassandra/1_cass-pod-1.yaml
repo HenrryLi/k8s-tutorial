@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cass-pod-1
+  labels:
+    app: cass
+spec:
+  containers:
+  - name: cass-container
+    image: reg.spp.com/spp/cass-dev:v1.2.18
+    args: ['cassandra','-f']
+    env:
+    - name: CASSANDRA_SEEDS
+      value: "cass-pod-1"
+    - name: CASSANDRA_INITIAL_TOKEN
+      value: "1000"

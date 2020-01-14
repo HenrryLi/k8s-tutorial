@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dns-svc
+  labels:
+    app: dns-app
+spec:
+  clusterIP: None
+  selector:
+    app: dns-app
+---
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: dns-cass
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dns-app
+    spec:
+      containers:
+        - name: app
+          image: reg.spp.com/spp/cass-dev:v1.2.19

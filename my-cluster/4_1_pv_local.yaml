@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    type: local
+  name: mysql-local-volume-0
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  hostPath:
+    path: /tmp/data-0
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: manual
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    type: local
+  name: mysql-local-volume-1
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  hostPath:
+    path: /tmp/data-1
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: manual
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    type: local
+  name: mysql-local-volume-2
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  hostPath:
+    path: /tmp/data-2
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: manual
