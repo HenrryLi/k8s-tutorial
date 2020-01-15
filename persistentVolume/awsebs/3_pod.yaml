@@ -1,18 +1,18 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: task-pod
+  name: aws-ebs-pod
 spec:
   volumes:
-    - name: task-volume
+    - name: mysql-data-volume
       persistentVolumeClaim:
-       claimName: task-pvc
+       claimName: aws-ebs-pvc
   containers:
-    - name: task-container
-      image: mysql:5.6
+    - name: mysql-container
+      image: mysql
       ports:
         - containerPort: 3306
-          name: "http-server"
+          name: "mysql-server"
       volumeMounts:
         - mountPath: "/var/lib/mysql"
-          name: task-pvc
+          name: mysql-data-volume

@@ -12,16 +12,20 @@ spp_sys@das1jmp001:~$ aws ec2 create-volume --size 10 --availability-zone ap-sou
     "SnapshotId": ""
 }
 
-aws ec2 create-volume --size 10 --availability-zone ap-southeast-1a
+[root@das1harbor001 ~]# aws ec2 create-volume --size 10 --availability-zone ap-southeast-1b
 {
-    "State": "creating",
-    "CreateTime": "2020-01-14T05:23:59.000Z",
-    "VolumeType": "gp2",
-    "Size": 10,
-    "AvailabilityZone": "ap-southeast-1a",
-    "Iops": 100,
-    "VolumeId": "vol-04066124d2c36ab45",
-    "SnapshotId": "",
+    "AvailabilityZone": "ap-southeast-1b",
+    "CreateTime": "2020-01-15T02:07:54.000Z",
     "Encrypted": false,
-    "Tags": []
+    "Size": 10,
+    "SnapshotId": "",
+    "State": "creating",
+    "VolumeId": "vol-09d980746af19306b",
+    "Iops": 100,
+    "Tags": [],
+    "VolumeType": "gp2"
 }
+
+
+aws ec2 describe-volumes --volume-ids vol-0654debe856b08dbe
+
