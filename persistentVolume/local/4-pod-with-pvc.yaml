@@ -6,8 +6,8 @@ metadata:
     app: pvtest
 spec:
   containers:
-    - name: busybox
-      image: busybox
+    - name: nginx
+      image: nginx
       volumeMounts:
         - mountPath: "/local-data"
           name: local-volume

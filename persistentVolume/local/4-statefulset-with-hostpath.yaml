@@ -15,11 +15,11 @@ spec:
         app: pvtest
     spec:
       containers:
-      - name: busybox
-        image: busybox
+      - name: nginx
+        image: nginx
         volumeMounts:
         - name: local-data
-          mountPath: /spp/cass/storage1/data
+          mountPath: /local-data
   volumeClaimTemplates:
   - metadata:
       name: local-data
