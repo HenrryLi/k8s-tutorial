@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: local-pv-pod
+  labels:
+    app: pvtest
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      volumeMounts:
+        - mountPath: "/local-data"
+          name: local-volume
+  volumes:
+    - name: local-volume
+      hostPath:
+        path: /data/k8s-local-pv/local-pod-pv-1
+        type: DirectoryOrCreate

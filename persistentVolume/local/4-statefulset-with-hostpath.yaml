@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: local-pv-cluster
+  labels:
+    app: pvtest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pvtest
+  template:
+    metadata:
+      labels:
+        app: pvtest
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        volumeMounts:
+        - name: local-data
+          mountPath: /spp/cass/storage1/data
+  volumeClaimTemplates:
+  - metadata:
+      name: local-data
+    spec:
+      storageClassName: local-hostpath
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
