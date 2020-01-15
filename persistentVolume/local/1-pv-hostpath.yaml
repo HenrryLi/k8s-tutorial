@@ -14,7 +14,7 @@ spec:
     path: /data/k8s-local-pv/local-pv-1
     type: DirectoryOrCreate
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: local-hostpath
+  storageClassName: manual
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -31,4 +31,4 @@ spec:
     path: /data/k8s-local-pv/local-pv-2
     type: DirectoryOrCreate
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: local-hostpath
+  storageClassName: manual
