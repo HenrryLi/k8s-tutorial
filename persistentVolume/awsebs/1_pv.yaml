@@ -1,7 +1,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: aws-ebs-a-pv-a-1
+  name: aws-ebs-pv-a-1
 spec:
   capacity:
     storage: 10Gi
