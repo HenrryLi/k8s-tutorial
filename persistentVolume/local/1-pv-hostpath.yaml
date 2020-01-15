@@ -9,7 +9,7 @@ spec:
   accessModes:
   - ReadWriteMany
   capacity:
-    storage: 10Gi
+    storage: 20Gi
   hostPath:
     path: /data/k8s-local-pv/local-pv-1
     type: DirectoryOrCreate
@@ -26,7 +26,7 @@ spec:
   accessModes:
   - ReadWriteMany
   capacity:
-    storage: 10Gi
+    storage: 20Gi
   hostPath:
     path: /data/k8s-local-pv/local-pv-2
     type: DirectoryOrCreate
