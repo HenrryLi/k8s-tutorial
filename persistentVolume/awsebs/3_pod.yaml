@@ -5,7 +5,7 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
-      required:
+      requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
           - key: kubernetes.io/hostname
