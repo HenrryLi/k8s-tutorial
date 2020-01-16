@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: storageclass-pv-pod
+  labels:
+    app: pvtest
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - mountPath: "/local-data"
+          name: local-volume
+  volumes:
+    - name: local-volume
+      persistentVolumeClaim:
+       claimName: storageclass-pvc-1
