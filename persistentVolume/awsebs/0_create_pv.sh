@@ -29,3 +29,5 @@ spp_sys@das1jmp001:~$ aws ec2 create-volume --size 10 --availability-zone ap-sou
 
 aws ec2 describe-volumes --volume-ids vol-0654debe856b08dbe
 
+aws ec2 create-volume --size 10 --availability-zone ap-southeast-1a --volume-type gp2 \
+--tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=k8s-ebs-1},{Key=purpose,Value=test}]'

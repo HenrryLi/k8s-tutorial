@@ -8,20 +8,20 @@ spec:
   accessModes:
     - ReadWriteOnce
   awsElasticBlockStore:
-    volumeID: vol-0180b1d549f7a61c4
+    volumeID: vol-08758afd8af4c3465
     fsType: ext4
   persistentVolumeReclaimPolicy: Recycle
 ---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: aws-ebs-pv-b-1
+  name: aws-ebs-pv-a-2
 spec:
   capacity:
     storage: 10Gi
   accessModes:
     - ReadWriteOnce
   awsElasticBlockStore:
-    volumeID: vol-09d980746af19306b
+    volumeID: vol-099a00fa97cb9db82
     fsType: ext4
   persistentVolumeReclaimPolicy: Recycle
