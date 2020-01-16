@@ -3,9 +3,14 @@ apiVersion: v1
 metadata:
   name: aws-ebs-pod
 spec:
-  nodeSelector:
-        #    hostName: das1k8smaster003
-    nodeType: master
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - ip-10-4-175-85.ap-southeast-1.compute.internal
   containers:
     - name: mysql-container
       image: mysql
