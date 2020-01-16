@@ -3,16 +3,20 @@ apiVersion: v1
 metadata:
   name: aws-ebs-pod
 spec:
-  nodeSelector:
-    hostName: ip-10-4-175-85.ap-southeast-1.compute.internal
+  affinity:
+    nodeAffinity:
+      required:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - ip-10-4-175-85.ap-southeast-1.compute.internal
   containers:
-    - name: mysql-container
-      image: mysql
-      ports:
-        - containerPort: 3306
-          name: "mysql-server"
+    - name: nginx
+      image: nginx
       volumeMounts:
-        - mountPath: "/var/lib/mysql"
+        - mountPath: "/ebs_data"
           name: mysql-data-volume
   volumes:
     - name: mysql-data-volume
