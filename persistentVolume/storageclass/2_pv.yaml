@@ -12,7 +12,6 @@ spec:
   storageClassName: local-storage
   local:
     path: /data/k8s-storageclass-pv/storageclass-pv-1
-    type: DirectoryOrCreate
   nodeAffinity:
     required:
       nodeSelectorTerms:
